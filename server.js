@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const port = 3000;
 
 app.use(express.json());
 
@@ -14,6 +14,13 @@ const productos = [{
     "nombre": "Monitor",
     "precio": 15000
 }];
+
+app.get('/api/usuarios', (req, res) => {
+  res.json([
+    { id: 1, nombre: "Juan", email: "juan@email.com" },
+  ]);
+});
+
 
 app.get('/api/productos', (req, res) => {
     res.json(productos)
